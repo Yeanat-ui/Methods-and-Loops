@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Global Time</title>
+</head>
+<body>
+
+
+<p id="liveTime">Loading time...</p>
+
+<script>
+ 
+  function displayLiveTime() {
+    var now = new Date(); // 
+    var hours = now.getHours(); // 
+    var minutes = now.getMinutes(); // 
+    var seconds = now.getSeconds(); // 
+
+    
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+
+    
+    var timeString = hours + ":" + minutes + ":" + seconds;
+
+    
+    document.getElementById("liveTime").innerHTML = "Current Time: " + timeString;
+  }
+
+
+  setInterval(displayLiveTime, 1000);
+
+  
+  displayLiveTime();
+</script>
+
+</body>
+</html>

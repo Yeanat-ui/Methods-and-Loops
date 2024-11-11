@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number Project</title>
+</head>
+<body>
+
+
+<button onclick="executeFunctions()">Execute Function</button>
+
+
+<p id="randomNumbers"></p>
+<p id="currentDate"></p>
+<p id="roundedRandomNumber"></p>
+
+<script>
+  function executeFunctions() {
+ 
+    var randomNumbers = [];
+    for (var i = 0; i < 5; i++) {
+      var randomNum = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
+      randomNumbers.push(randomNum);
+    }
+    document.getElementById("randomNumbers").innerHTML = "Random Numbers: " + randomNumbers.join(", ");
+
+    var currentDate = new Date();
+    document.getElementById("currentDate").innerHTML = "Current Date: " + currentDate.toDateString();
+
+    
+    var randomFloat = Math.random() * 100; // Random decimal number between 0 and 100
+    var roundedNumber = Math.round(randomFloat);
+    document.getElementById("roundedRandomNumber").innerHTML = "Rounded Random Number: " + roundedNumber;
+  }
+</script>
+
+</body>
+</html>
